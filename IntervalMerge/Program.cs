@@ -67,75 +67,97 @@ namespace IntervalMerge
 					initCase = "0";
 				}
 
-				
-				switch (initCase)
+				// determine if custom input is provided or one of the pre-defined inputs is used
+				if (initCase.StartsWith("["))
 				{
-					case "0":
-						// official input data
-						inputIntervals.Add(new Interval(25, 30));
-						inputIntervals.Add(new Interval(2, 19));
-						inputIntervals.Add(new Interval(14, 23));
-						inputIntervals.Add(new Interval(4, 8));
-						break;
+					// ----- not production-ready, added only for testing convenience -----
 
-					case "1":
-						// test 1
-						inputIntervals.Add(new Interval(5, 14));
-						inputIntervals.Add(new Interval(30, 32));
-						inputIntervals.Add(new Interval(16, 17));
-						inputIntervals.Add(new Interval(23, 28));
-						inputIntervals.Add(new Interval(8, 10));
-						inputIntervals.Add(new Interval(15, 15));
-						inputIntervals.Add(new Interval(1, 2));
-						inputIntervals.Add(new Interval(19, 21));
-						inputIntervals.Add(new Interval(19, 19));
-						inputIntervals.Add(new Interval(7, 8));
-						break;
+					initCase = initCase.Replace(" ", "");   // remove whitespaces
+					initCase = initCase.Substring(1, initCase.Length - 2); // remove leading [ and trailing ]
+					string[] plainIntervals = initCase.Split(new string[] { "][" }, StringSplitOptions.RemoveEmptyEntries);
 
-					case "2":
-						// test2
-						inputIntervals.Add(new Interval(38, 39));
-						inputIntervals.Add(new Interval(38, 38));
-						inputIntervals.Add(new Interval(35, 37));
-						inputIntervals.Add(new Interval(33, 36));
-						inputIntervals.Add(new Interval(31, 31));
-						inputIntervals.Add(new Interval(25, 26));
-						inputIntervals.Add(new Interval(24, 25));
-						inputIntervals.Add(new Interval(21, 28));
-						inputIntervals.Add(new Interval(18, 22));
-						inputIntervals.Add(new Interval(16, 17));
-						inputIntervals.Add(new Interval(14, 16));
-						inputIntervals.Add(new Interval(10, 12));
-						inputIntervals.Add(new Interval(9, 11));
-						inputIntervals.Add(new Interval(5, 6));
-						inputIntervals.Add(new Interval(3, 11));
-						inputIntervals.Add(new Interval(2, 3));
-						inputIntervals.Add(new Interval(1, 2));
-						break;
+					foreach (string s in plainIntervals)
+					{
+						string[] numbers = s.Split(new char[] { ',' });
+						if (numbers.Length == 2)
+						{
+							inputIntervals.Add(new Interval(Convert.ToInt32(numbers[0]), Convert.ToInt32(numbers[1])));
+						}
+					}
 
-					case "3":
-						// test2
-						inputIntervals.Add(new Interval(1, 2));
-						inputIntervals.Add(new Interval(2, 3));
-						inputIntervals.Add(new Interval(3, 11));
-						inputIntervals.Add(new Interval(5, 6));
-						inputIntervals.Add(new Interval(9, 11));
-						inputIntervals.Add(new Interval(10, 12));
-						inputIntervals.Add(new Interval(14, 16));
-						inputIntervals.Add(new Interval(16, 17));
-						inputIntervals.Add(new Interval(18, 22));
-						inputIntervals.Add(new Interval(21, 28));
-						inputIntervals.Add(new Interval(24, 25));
-						inputIntervals.Add(new Interval(25, 26));
-						inputIntervals.Add(new Interval(31, 31));
-						inputIntervals.Add(new Interval(33, 36));
-						inputIntervals.Add(new Interval(35, 37));
-						inputIntervals.Add(new Interval(38, 38));
-						inputIntervals.Add(new Interval(38, 39));
-						break;
+					// ----- not production-ready end-----
+				}
+				else
+				{
+					switch (initCase)
+					{
+						case "0":
+							// official input data
+							inputIntervals.Add(new Interval(25, 30));
+							inputIntervals.Add(new Interval(2, 19));
+							inputIntervals.Add(new Interval(14, 23));
+							inputIntervals.Add(new Interval(4, 8));
+							break;
 
-					default:
-						break;
+						case "1":
+							// test 1
+							inputIntervals.Add(new Interval(5, 14));
+							inputIntervals.Add(new Interval(30, 32));
+							inputIntervals.Add(new Interval(16, 17));
+							inputIntervals.Add(new Interval(23, 28));
+							inputIntervals.Add(new Interval(8, 10));
+							inputIntervals.Add(new Interval(15, 15));
+							inputIntervals.Add(new Interval(1, 2));
+							inputIntervals.Add(new Interval(19, 21));
+							inputIntervals.Add(new Interval(19, 19));
+							inputIntervals.Add(new Interval(7, 8));
+							break;
+
+						case "2":
+							// test2
+							inputIntervals.Add(new Interval(38, 39));
+							inputIntervals.Add(new Interval(38, 38));
+							inputIntervals.Add(new Interval(35, 37));
+							inputIntervals.Add(new Interval(33, 36));
+							inputIntervals.Add(new Interval(31, 31));
+							inputIntervals.Add(new Interval(25, 26));
+							inputIntervals.Add(new Interval(24, 25));
+							inputIntervals.Add(new Interval(21, 28));
+							inputIntervals.Add(new Interval(18, 22));
+							inputIntervals.Add(new Interval(16, 17));
+							inputIntervals.Add(new Interval(14, 16));
+							inputIntervals.Add(new Interval(10, 12));
+							inputIntervals.Add(new Interval(9, 11));
+							inputIntervals.Add(new Interval(5, 6));
+							inputIntervals.Add(new Interval(3, 11));
+							inputIntervals.Add(new Interval(2, 3));
+							inputIntervals.Add(new Interval(1, 2));
+							break;
+
+						case "3":
+							// test2
+							inputIntervals.Add(new Interval(1, 2));
+							inputIntervals.Add(new Interval(2, 3));
+							inputIntervals.Add(new Interval(3, 11));
+							inputIntervals.Add(new Interval(5, 6));
+							inputIntervals.Add(new Interval(9, 11));
+							inputIntervals.Add(new Interval(10, 12));
+							inputIntervals.Add(new Interval(14, 16));
+							inputIntervals.Add(new Interval(16, 17));
+							inputIntervals.Add(new Interval(18, 22));
+							inputIntervals.Add(new Interval(21, 28));
+							inputIntervals.Add(new Interval(24, 25));
+							inputIntervals.Add(new Interval(25, 26));
+							inputIntervals.Add(new Interval(31, 31));
+							inputIntervals.Add(new Interval(33, 36));
+							inputIntervals.Add(new Interval(35, 37));
+							inputIntervals.Add(new Interval(38, 38));
+							inputIntervals.Add(new Interval(38, 39));
+							break;
+
+						default:
+							break;
+					}
 				}
 			}
 			catch (Exception)
