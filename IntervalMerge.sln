@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalMerge", "IntervalMerge\IntervalMerge.csproj", "{88246AB5-D5A5-4187-A10D-78C8BAD6DCFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88246AB5-D5A5-4187-A10D-78C8BAD6DCFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88246AB5-D5A5-4187-A10D-78C8BAD6DCFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88246AB5-D5A5-4187-A10D-78C8BAD6DCFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88246AB5-D5A5-4187-A10D-78C8BAD6DCFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99E73B5A-C98B-465F-B3FE-00A7EF2C440F}
+	EndGlobalSection
+EndGlobal
