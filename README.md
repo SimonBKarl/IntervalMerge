@@ -32,12 +32,12 @@ Wie verhält sich der Speicherverbrauch ihres Programms ?
 ## Lösung
 
 ### Annahmen
-	- Der Input erfolgt als List<Interval>.
-	- Der Output soll aufsteigend sortiert sein. (Irrelevant, da implementierungsbedingt ohnehin eine sortierte Liste ausgegben werden würde.)
+    - Der Input erfolgt als List<Interval>.
+    - Der Output soll aufsteigend sortiert sein. (Irrelevant, da implementierungsbedingt ohnehin eine sortierte Liste ausgegben wird.)
 
 ### Zu den Fragen
 Die Laufzeit des Programms liegt im Schnitt bei O(n log n), im schlimmsten Fall bei O(n²). Dies ist durch die Sortierung des Inputs bedingt, denn die Merge-Operation an sich hat eine Laufzeit von O(n), die vorangehende Sortierung jedoch von O(n log n) - worst-case O(n²). Um auch bei sehr großen Eingaben eine performante Lösung, also O(n), gewährleisten zu können, könnte man voraussetzen, dass die Eingabe als aufsteigend sortierte Liste zu erfolgen hat. Der Speicherverbrauch ist in beiden Fällen O(n).
 
 ### Zum Programm
 Das Programm stellt mehrer Input-Daten zur Verfügung, der von Ihnen genannte Input wird mit einem simplen [Return] oder einer 0 und dann [Return] verwendet. Mit der Eingabe [1...3] können vorbereitete Testdaten verwendet werden.
-Trotz oben genannter Annahme ist ein simpler (nicht Production-ready) Parser implementiert, der verwendet wird, wenn die Eingabe mit '[' beginnt. So können auch andere Inputs getestet werden (Ohne dass Sie diese im Code ergänzen müssen.), sollten Sie solche vorbereitet haben.
+Trotz oben genannter Annahme ist ein simpler (nicht auslieferungsfähiger) Parser implementiert, der verwendet wird, wenn die Eingabe mit '[' beginnt. So können auch andere Inputs getestet werden (Ohne dass Sie diese im Code ergänzen müssen.), sollten Sie solche vorbereitet haben.
