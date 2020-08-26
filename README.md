@@ -26,3 +26,17 @@ Input: [25,30] [2,19] [14, 23] [4,8]  Output: [2,23] [25,30]
 Wie ist die Laufzeit Ihres Programms ? 
 Wie kann die Robustheit sichergestellt werden, vor allem auch mit Hinblick auf sehr große Eingaben ?
 Wie verhält sich der Speicherverbrauch ihres Programms ?
+
+
+
+## Lösung
+
+### Annahmen
+	- Der Input erfolgt als List<Interval>.
+	- Der Output soll aufsteigend sortiert sein. (Irrelevant, da implementierungsbedingt ohnehin eine sortierte Liste ausgegben werden würde.)
+
+### Zu den Fragen
+Die Laufzeit des Programms liegt im Schnitt bei O(n log n), im schlimmsten Fall bei O(n²). Dies ist durch die Sortierung des Inputs bedingt, denn die Merge-Operation an sich hat eine Laufzeit von O(n), die vorangehende Sortierung jedoch von O(n log n) - worst-case O(n²). Um auch bei sehr großen Eingaben eine performante Lösung, also O(n), gewährleisten zu können, könnte man voraussetzen, dass die Eingabe als aufsteigend sortierte Liste zu erfolgen hat. Der Speicherverbrauch ist in beiden Fällen O(n).
+
+### Zum Programm
+Das Programm stellt mehrer Input-Daten zur Verfügung, der von Ihnen genannte Input wird mit einem simplen [Return] oder einer 0 und dann [Return] verwendet. Mit der Eingabe [1...3] können vorbereitete Testdaten verwendet werden.
