@@ -41,3 +41,5 @@ Die Laufzeit des Programms liegt im Schnitt bei O(n log n), im schlimmsten Fall 
 ### Zum Programm
 Das Programm stellt mehrer Input-Daten zur Verfügung, der von Ihnen genannte Input wird mit einem simplen [Return] oder einer 0 und dann [Return] verwendet. Mit der Eingabe [1...3] können vorbereitete Testdaten verwendet werden.
 Trotz oben genannter Annahme ist ein simpler (nicht auslieferungsfähiger) Parser implementiert, der verwendet wird, wenn die Eingabe mit '[' beginnt. So können auch andere Inputs getestet werden (Ohne dass Sie diese im Code ergänzen müssen.), sollten Sie solche vorbereitet haben.
+
+### Bearbeitungszeit: 2,5h
